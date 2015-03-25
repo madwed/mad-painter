@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+#container{
+  margin: 30px auto;
+  width: 840px;
+  height:640px;
+}
+
+div#container canvas {
+  margin:auto;
+  border: 10px solid black;
+  width: 840px;
+  height: 640px;
+}
