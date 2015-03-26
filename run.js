@@ -23,7 +23,7 @@ window.onload = function() {
     var len = Math.floor(30);
 
     pSys.addBrush(new PixelBrush(numW,numH,numW+len,numH,pSys,"blend"));
-    pSys.brushes[i].setMaxSpeedAndForce(100,200);
+    pSys.brushes[i].setMaxSpeedAndForce(.2,.2);
     pSys.brushes[i].rgbaValues[0] = Math.random() * 255;
     pSys.brushes[i].rgbaValues[1] = 0;
     pSys.brushes[i].rgbaValues[2] = 0;
