@@ -6,7 +6,7 @@ window.onload = function() {
   pSys = new BrushManager(bigMan);
   bigMan.addManager(pSys);
 
-  for(var i=0;i<100;i++){
+  for(var i=0;i<1;i++){
     var numW = Math.floor(Math.random()*canvas1.width);
     var numH = Math.floor(Math.random()*canvas1.height);
     var len = Math.floor(30);
@@ -31,19 +31,22 @@ now = function(){
 
     bigMan.run();
 
-    /*canvas1.onclick = function(event){
+    canvas1.onclick = function(event){
       var rect = canvas1.getBoundingClientRect();
-      var x = event.clientX - rect.left;
-      var y = event.clientY - rect.top;
-      pSys.addBrush(new Brush(x,y,x+50,y,pSys));
+      var x = event.clientX; + rect.right;
+      var y = event.clientY; + rect.bottom;
+      pSys.addBrush(new Brush(x,y,x+50,y));
       pSys.brushes[pSys.brushes.length-1].setMaxSpeedAndForce(.5,.01);
-      console.log(x,y)
+      pSys.brushes[pSys.brushes.length-1].rgbaValues[0] = Math.random() * 255;
+      pSys.brushes[pSys.brushes.length-1].rgbaValues[1] = 0;
+      pSys.brushes[pSys.brushes.length-1].rgbaValues[2] = 0;
+      pSys.brushes[pSys.brushes.length-1].rgbaValues[3] = 255;
     }
 
     if(stop === 1){
       Save(canvas1,"stillLife","png");
       stop = 0;
-    }*/
+    }
   })();
 
 
