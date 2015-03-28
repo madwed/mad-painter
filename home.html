@@ -16,12 +16,29 @@
       <canvas id="canvas1" width="840"; height="640";>
         this requires javascript
       </canvas>
-      <div id="buttons">
-        <input class="button" type="range">
-        <input class="button" type="range">
-        <input class="button" type="range">
-        <input class="button" type="range">
-      </div>
+      <table id="buttons">
+        <tr><td> 
+        r: 0 <input name="red" type="range" min="0" max="255" value="250" step="1"> 255
+         </td></tr>
+        <tr><td> 
+        g: 0 <input name="green" type="range" min="0" max="255" value="100" step="1"> 255
+         </td></tr>
+        <tr><td> 
+        b: 0 <input name="blue" type="range" min="0" max="255" value="50" step="1"> 255
+         </td></tr>
+        <tr><td> 
+        a: 0 <input name="alpha" type="range" min="0" max="255" value="255" step="1"> 255
+         </td></tr>
+        <tr><td> random?: <input name="random" type="checkbox"> </td></tr>
+        <tr><td> 
+        blend 
+        <input name="default" type="radio">
+        </td></tr>
+        <tr><td> 
+        smear 
+
+        </td></tr>
+      </table>
     </div>
 
 
