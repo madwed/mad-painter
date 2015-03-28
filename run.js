@@ -32,10 +32,10 @@ now = function(){
     bigMan.run();
 
     canvas1.onclick = function(event){
-      var rect = canvas1.getBoundingClientRect();
-      var x = event.clientX; + rect.right;
-      var y = event.clientY; + rect.bottom;
-      pSys.addBrush(new Brush(x,y,x+50,y));
+      var rect = canvas1.getBoundingClientRect(), root = document.documentElement;
+      var x = event.clientX - rect.left - root.scrollLeft;
+      var y = event.clientY - rect.top - root.scrollTop;
+      pSys.addBrush(new Brush(x-60,y-10,x+40,y-10));
       pSys.brushes[pSys.brushes.length-1].setMaxSpeedAndForce(.5,.01);
       pSys.brushes[pSys.brushes.length-1].rgbaValues[0] = Math.random() * 255;
       pSys.brushes[pSys.brushes.length-1].rgbaValues[1] = 0;

@@ -1,14 +1,27 @@
 @CHARSET "UTF-8";
 
 #container{
-  margin: 30px auto;
-  width: 840px;
-  height:640px;
+	margin:30px auto;
+	width:1000px;
+	height:640px;
 }
 
-div#container canvas {
-  margin:auto;
-  border: 10px solid black;
-  width: 840px;
-  height: 640px;
+#buttons{
+	display:inline-table;
+	position:relative;
+	top:-20px; 
+}
+
+.button{
+	display:table;
+	position:relative;
+	top:-40px;
+}
+
+#canvas1 {
+	display: inline;
+	margin:auto;
+	border: 10px solid black;
+	width: 840px;
+  	height: 640px;
 }
