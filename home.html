@@ -18,26 +18,28 @@
       </canvas>
       <table id="buttons">
         <tr><td> 
-        r: 0 <input name="red" type="range" min="0" max="255" value="250" step="1"> 255
+        r: 0 <input id="red" name="red" type="range" min="0" max="255" value="250" step="1"> 255
          </td></tr>
         <tr><td> 
-        g: 0 <input name="green" type="range" min="0" max="255" value="100" step="1"> 255
+        g: 0 <input id="green" name="green" type="range" min="0" max="255" value="100" step="1"> 255
          </td></tr>
         <tr><td> 
-        b: 0 <input name="blue" type="range" min="0" max="255" value="50" step="1"> 255
+        b: 0 <input id="blue" name="blue" type="range" min="0" max="255" value="50" step="1"> 255
          </td></tr>
         <tr><td> 
-        a: 0 <input name="alpha" type="range" min="0" max="255" value="255" step="1"> 255
+        a: 0 <input id="alpha" name="alpha" type="range" min="0" max="255" value="255" step="1"> 255
          </td></tr>
-        <tr><td> random?: <input name="random" type="checkbox"> </td></tr>
-        <tr><td> 
-        blend 
-        <input name="default" type="radio">
-        </td></tr>
-        <tr><td> 
-        smear 
-
-        </td></tr>
+        <tr><td> random?<input name="random" type="checkbox"> </td></tr>
+        <th> blend </th>
+        <tr>
+          <td>
+            default<input name="blend" type="radio">
+            black<input name="blend" type="radio">
+            white<input name="blend" type="radio">
+            b/w<input name="blend" type="radio">
+          </td>
+        </tr>
+        <th> smear </th>
       </table>
     </div>
 
