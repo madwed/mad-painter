@@ -3,25 +3,6 @@ window.onload = function() {
   canvas1 = document.getElementById('canvas1');
   bigMan = new Piece();
   bigMan.init(canvas1);
-  pSys = new BrushManager(function(marks,self){self.smearAll(marks,self);});
-  bigMan.addManager(pSys);
-  var red = document.getElementById("red");
-  var blue = document.getElementById("blue");
-  var green = document.getElementById("green");
-  var alpha = document.getElementById("alpha");
-
-  for(var i=0;i<1;i++){
-    var numW = Math.floor(Math.random()*canvas1.width);
-    var numH = Math.floor(Math.random()*canvas1.height);
-    var len = Math.floor(30);
-
-    pSys.addBrush(new Brush(numW,numH,numW+len,numH));
-    pSys.brushes[i].setMaxSpeedAndForce(2,.2);
-    pSys.brushes[i].rgbaValues[0] = red.value;
-    pSys.brushes[i].rgbaValues[1] = green.value;
-    pSys.brushes[i].rgbaValues[2] = blue.value;
-    pSys.brushes[i].rgbaValues[3] = alpha.value;
-  }
   now();
 }
 
@@ -30,6 +11,7 @@ now = function(){
   var blue = document.getElementById("blue");
   var green = document.getElementById("green");
   var alpha = document.getElementById("alpha");
+  var actions = document.getElementsByName("action");
   var animloop;
 
   (animloop = function() {
@@ -43,12 +25,14 @@ now = function(){
       var rect = canvas1.getBoundingClientRect(), root = document.documentElement;
       var x = event.clientX - rect.left - root.scrollLeft;
       var y = event.clientY - rect.top - root.scrollTop;
-      pSys.addBrush(new Brush(x-60,y-10,x+40,y-10));
-      pSys.brushes[pSys.brushes.length-1].setMaxSpeedAndForce(.5,.01);
-      pSys.brushes[pSys.brushes.length-1].rgbaValues[0] = red.value;
-      pSys.brushes[pSys.brushes.length-1].rgbaValues[1] = green.value;
-      pSys.brushes[pSys.brushes.length-1].rgbaValues[2] = blue.value;
-      pSys.brushes[pSys.brushes.length-1].rgbaValues[3] = alpha.value;
+      var method = ["smear","default"];
+      for(var action=0; action < actions.length; action++){
+        if(actions[action].checked){
+          method = actions[action].value.split(" ");
+          break;
+        }
+      }
+      bigMan.uiAddBrush(method[0],method[1],x,y,[red.value,green.value,blue.value,alpha.value])
     }
 
     if(stop === 1){
