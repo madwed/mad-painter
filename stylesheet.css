@@ -1,14 +1,27 @@
 @CHARSET "UTF-8";
 
 #container{
-  margin: 30px auto;
-  width: 840px;
-  height:640px;
+	text-align: center;
+	margin:30px auto;
+	height:640px;
+	font-family: "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 }
 
-div#container canvas {
-  margin:auto;
-  border: 10px solid black;
-  width: 840px;
-  height: 640px;
+#buttons{
+	display:inline-block;	
+	height:640px;
+	text-align:center; 	
 }
+
+#canvas1 {
+	display: inline-block;
+	margin:auto;
+	border: 10px solid black;
+	width: 840px;
+  	height: 640px;
+}
+
+th {
+	text-decoration: underline overline;
+}
+

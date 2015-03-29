@@ -16,7 +16,50 @@
       <canvas id="canvas1" width="840"; height="640";>
         this requires javascript
       </canvas>
+      <table id="buttons">
+        <tr><td> 
+        r: 0 <input id="red" name="red" type="range" min="0" max="255" value="250" step="1"> 255
+         </td></tr>
+        <tr><td> 
+        g: 0 <input id="green" name="green" type="range" min="0" max="255" value="100" step="1"> 255
+         </td></tr>
+        <tr><td> 
+        b: 0 <input id="blue" name="blue" type="range" min="0" max="255" value="50" step="1"> 255
+         </td></tr>
+        <tr><td> 
+        a: 0 <input id="alpha" name="alpha" type="range" min="0" max="255" value="255" step="1"> 255 
+        </td></tr>
+        <tr><td> randomize under ranges above <input name="random" type="checkbox"> </td></tr>
+        <th> blend</th>
+        <tr>
+          <td>
+            default<input name="action" value="blend default" type="radio">
+            <!--black<input name="blend" type="radio">
+            white<input name="blend" type="radio">-->
+            b/w<input name="action" value="blend b/w" type="radio">
+          </td>
+        </tr>
+        <th> smear</th>
+        <tr>
+          <td>
+            all<input name="action" value="smear default" type="radio" >
+            opaque<input name="action" value="smear opaque" type="radio" checked="checked">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            antiTransparent<input name="action" value="smear antiTransparent" type="radio">
+          </td>
+        </tr>
+        <tr>
+          <td>  
+            awayDark<input name="action" value="smear awayDark" type="radio">
+            awayLight<input name="action" value="smear awayLight" type="radio">
+          </td>
+        </tr>
+      </table>
     </div>
+
 
     <script src="run.js"></script>
 
