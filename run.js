@@ -8,8 +8,9 @@ window.onload = function() {
   var actions = document.getElementsByName("action");
   var randoms = document.getElementsByName("random");
   var life = document.getElementById("life");
+  var size = document.getElementById("size");
   bigMan = new Piece();
-  bigMan.init(canvas1,red,green,blue,alpha,actions,randoms,life);
+  bigMan.init(canvas1,red,green,blue,alpha,actions,randoms,life,size);
   now();
 }
 
