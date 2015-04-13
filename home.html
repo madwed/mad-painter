@@ -14,10 +14,10 @@
 <body>
     <div id="container">
       <div id="canbox">
-        <canvas class="canvas" id="uiCanvas" width="840"; height="640";>
+        <canvas class="canvas" id="canvas1" width="840"; height="640";>
           this requires javascript
         </canvas>
-        <canvas class="canvas" id="canvas1" width="840"; height="640";>
+        <canvas class="canvas" id="uiCanvas" width="840"; height="640";>
           this requires javascript
         </canvas>
       </div>
@@ -37,8 +37,10 @@
         <tr><td> randomize under color values <input name="random" value="down" type="radio"> </td></tr>
         <tr><td> randomize over color values <input name="random" value="up" type="radio"> </td></tr>
         <tr><td> don't randomize <input name="random" value="no" type="radio" checked="checked"> </td></tr>
-        <th>smear length</th>
+        <th>stroke length</th>
         <tr><td>short <input id="life" name="life" type="range" min="10" max="1000" value="100" step="1"> long</td></tr>
+        <th>smear length</th>
+        <tr><td>short <input id="smear" name="smear" type="range" min="1" max="500" value="100" step="1"> long</td></tr>
         <th>brush width</th>
         <tr><td>thin <input id="size" name="size" type="range" min="1" max="200" value="10" step="1"> thick</td></tr>
         <th>blend</th>
