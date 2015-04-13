@@ -1,6 +1,7 @@
 
 window.onload = function() {
   var canvas1 = document.getElementById('canvas1');
+  var uiCanvas = document.getElementById('uiCanvas');
   var red = document.getElementById("red");
   var blue = document.getElementById("blue");
   var green = document.getElementById("green");
@@ -10,7 +11,7 @@ window.onload = function() {
   var life = document.getElementById("life");
   var size = document.getElementById("size");
   bigMan = new Piece();
-  bigMan.init(canvas1,red,green,blue,alpha,actions,randoms,life,size);
+  bigMan.init(canvas1,uiCanvas,red,green,blue,alpha,actions,randoms,life,size);
   now();
 }
 
