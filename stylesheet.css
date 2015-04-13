@@ -13,9 +13,17 @@
 	text-align:center; 	
 }
 
-#canvas1 {
+#canbox{
+	position:relative;
 	display: inline-block;
-	margin:auto;
+	margin:0px auto;
+	width: 860px;
+  	height: 660px;
+}
+
+.canvas {
+	position:absolute;
+	top:0px; left:0px;
 	border: 10px solid black;
 	width: 840px;
   	height: 640px;
