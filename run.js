@@ -31,19 +31,6 @@ now = function(){
 
     bigMan.run();
 
-    /*canvas1.onclick = function(event){
-      var rect = canvas1.getBoundingClientRect();
-      var x = event.clientX - rect.left;
-      var y = event.clientY - rect.top;
-      pSys.addBrush(new Brush(x,y,x+50,y,pSys));
-      pSys.brushes[pSys.brushes.length-1].setMaxSpeedAndForce(.5,.01);
-      console.log(x,y)
-    }
-
-    if(stop === 1){
-      Save(canvas1,"stillLife","png");
-      stop = 0;
-    }*/
   })();
 
 
