@@ -5,22 +5,21 @@ body{
 }
 
 .title{
-	text-align: left;
 	margin: .2em;
 }
 
 #container{
-	text-align: center;
 	margin:2.5em auto;
 	height:53.33em;
 }
 
 #buttons{
 	display:inline-block;
-	text-align:center; 	
+	text-align:left; 	
 	position: absolute;
 	top: 2.5em;
-	right:2em;
+	right:4em;
+	width:25%;
 }
 
 #canbox{
@@ -28,21 +27,34 @@ body{
 	left:2em;
 	display: inline-block;
 	margin:0em 1.5em;
-	width: 71.66em;
-  height: 55em;
+	width: 65%;
+  height: 85%;
 }
 
 .canvas {
 	position:absolute;
 	top:0em; left:0em;
-	border: .833em solid black;
-	width: 70em;
-  height: 53.33em;
+	/*border: .833em solid black;*/
+	width: 100%;
+  height: 100%;
+}
+#canvasFrame{
+	position: absolute;
+	top:-1.3125%; left:-1%;
+	width:102%;
+	height:102.625%;
+	background: black;
+}
+#canvasFrameMat{
+	position: absolute;
+	top:0em; left:0em;
+	width:100%; height:100%;
+	background: white;
 }
 
 #managers-wrapper{
 	margin: .42em 1.24em;
-	width: 25.15em;
+	width: 100%;
 }
 
 #managers h3{
@@ -60,26 +72,29 @@ th {
 }
 
 #colors{
-	width:25em;
+	width:99.5%;
 	margin: .42em 1.24em;
+}
+#brush{
+	width:100%;
+	position: relative;
+	left: 1.2em;
 }
 #brushProperties{
 	display: inline-block;
-	width:20em;
+	width:79%;
 	height:8em;
-	margin: .1em .5em;
-	border: 1px solid black;
+	margin: 0em .2em 0em 0em;
 }
 #brushPropertiesSpin{
 	display: inline-block;
 	position: absolute;
-	width:5em;
+	width:20%;
 	height:8em;
-	margin: .1em 0em;
-	border: 1px solid black;
+	margin:0em;
 }
 #brushPropertiesSpin input{
-	width:3em;
+	width:100%;
 	height:1em;
 }
 /*
@@ -88,7 +103,7 @@ implement black and white background behind slider
 	background: black;
 }*/
 #swatch {
-	width: 25.15em;
+	width: 100%;
 	height: 3em;
 	margin: .42em 1.34em;
 	border: .1em solid lightgray;

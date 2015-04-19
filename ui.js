@@ -38,6 +38,10 @@ $(function() {
 		value: 10
 	});
 	$("#smear, #life").slider("option","max",1000);
+	$("#size").on("slide",function(_,ui){$("#sizeSpin").spinner("value",ui.value)});
+	$("#smear").on("slide",function(_,ui){$("#smearSpin").spinner("value",ui.value)});
+	$("#life").on("slide",function(_,ui){$("#lifeSpin").spinner("value",ui.value)});
+
 	//Accompanying spinners
 	$("#sizeSpin, #smearSpin, #lifeSpin").spinner({
 		max: 300,
@@ -45,7 +49,7 @@ $(function() {
 	});
 	$("#sizeSpin, #smearSpin, #lifeSpin").spinner("value",10);
 	$("#smearSpin, #lifeSpin").spinner("option","max",1000);
-	$("#sizeSpin").on("spin",function(){$("#size").slider("value",$("#sizeSpin").spinner("value"))});
-	$("#smearSpin").on("spin",function(){$("#smear").slider("value",$("#smearSpin").spinner("value"))});
-	$("#lifeSpin").on("spin",function(){$("#life").slider("value",$("#lifeSpin").spinner("value"))});
+	$("#sizeSpin").on("spin",function(_,ui){$("#size").slider("value",ui.value)});
+	$("#smearSpin").on("spin",function(_,ui){$("#smear").slider("value",ui.value)});
+	$("#lifeSpin").on("spin",function(_,ui){$("#life").slider("value",ui.value)});
 });
