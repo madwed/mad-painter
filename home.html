@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <title>Bouncing Shape</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
-  <link rel="stylesheet" href="../lib/jquery-ui-1.11.4.custom/jquery-ui.min.css"/>
+  <link rel="stylesheet" href="../lib/jquery-ui-1.11.4.custom/jquery-ui.css"/>
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="../lib/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
   <script src="lib/saving.js"></script>
   <script src="lib/mathLib.js"></script>
   <script src="lib/Piece.js"></script>
   <script src="lib/BrushManager.js"></script>
   <script src="lib/Brush.js"></script>
+
 
 </head>
 <body>
@@ -35,42 +37,46 @@
         <p> randomize under color values <input name="random" value="down" type="radio"> </p>
         <p> randomize over color values <input name="random" value="up" type="radio"> </p>
         <p> don't randomize <input name="random" value="no" type="radio" checked="checked"> </p>
-        <p>stroke length</p>
-        <p>short <input id="life" name="life" type="range" min="10" max="1000" value="100" step="1"> long</p>
-        <p>smear length</p>
-        <p>short <input id="smear" name="smear" type="range" min="1" max="500" value="100" step="1"> long</p>
-        <p>brush width</p>
-        <p>thin <input id="size" name="size" type="range" min="1" max="200" value="10" step="1"> thick</p>
+        <div id="brushProperties">
+          <p class="title">stroke length</p>
+          <div id="life"></div>
+          <p class="title">smear length</p>
+          <div id="smear"></div>
+          <p class="title">brush width</p>
+          <div id="size"></div>
+        </div>
+        <div id="brushPropertiesSpin">
+          <p></p>
+          <input id="lifeSpin">
+          <p></p>
+          <input id="smearSpin">
+          <p></p>
+          <input id="sizeSpin">
+        </div>
+        <div id="managers-wrapper">
         <div id="managers">
           <h3>blend</h3>
           <div>
-            <p>
-              default<input name="action" value="blend default" type="radio">
+            <p>default<input name="action" value="blend default" type="radio"></p>
               <!--black<input name="blend" type="radio">
               white<input name="blend" type="radio">-->
-              b/w<input name="action" value="blend b/w" type="radio">
-            </p>
+            <p>b/w<input name="action" value="blend b/w" type="radio"></p>
           </div>
         
           <h3>smear</h3>
           <div>
-            <p>
-              all<input name="action" value="smear default" type="radio" >
-              opaque<input name="action" value="smear opaque" type="radio" checked="checked">
-            </p>
-            <p>
-              antiTransparent<input name="action" value="smear antiTransparent" type="radio"> 
-            </p>
-            <p>
-              awayDark<input name="action" value="smear awayDark" type="radio">
-              awayLight<input name="action" value="smear awayLight" type="radio">
-            </p>
+            <p>all<input name="action" value="smear default" type="radio" ></p>
+            <p>opaque<input name="action" value="smear opaque" type="radio" checked="checked"></p>
+            <p>antiTransparent<input name="action" value="smear antiTransparent" type="radio"></p>
+            <p>awayDark<input name="action" value="smear awayDark" type="radio"></p>
+            <p>awayLight<input name="action" value="smear awayLight" type="radio"></p>
           </div>
+        </div>
         </div>
       </div>
     </div>
 
-    <script src="ui.js"></script>
+    <script src="ui.js"></script>    
     <script src="run.js"></script>
 
 

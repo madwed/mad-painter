@@ -2,17 +2,12 @@
 window.onload = function() {
   var canvas1 = document.getElementById('canvas1');
   var uiCanvas = document.getElementById('uiCanvas');
-  var red = document.getElementById("red");
-  var blue = document.getElementById("blue");
-  var green = document.getElementById("green");
-  var alpha = document.getElementById("alpha");
   var actions = document.getElementsByName("action");
   var randoms = document.getElementsByName("random");
   var life = document.getElementById("life");
   var smear = document.getElementById("smear");
-  var size = document.getElementById("size");
   bigMan = new Piece();
-  bigMan.init(canvas1,uiCanvas,red,green,blue,alpha,actions,randoms,life,smear,size);
+  bigMan.init(canvas1,uiCanvas,actions,randoms,life,smear);
   now();
 }
 
