@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 
+
 body{
 	font: 75% "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 }
@@ -9,8 +10,11 @@ body{
 }
 
 #container{
-	margin:2.5em auto;
-	height:53.33em;
+	margin:2.5em auto 0em;
+	height:51.83em;
+}
+#base{
+	margin:0em auto;
 }
 
 #buttons{
@@ -21,28 +25,23 @@ body{
 	right:4em;
 	width:25%;
 }
-
 #canbox{
 	position:absolute;
 	left:2em;
 	display: inline-block;
 	margin:0em 1.5em;
-	width: 65%;
-  height: 85%;
+	width: 65%; height: 85%;
 }
-
 .canvas {
 	position:absolute;
 	top:0em; left:0em;
 	/*border: .833em solid black;*/
-	width: 100%;
-  height: 100%;
+	width: 100%; height: 100%;
 }
 #canvasFrame{
 	position: absolute;
 	top:-2%; left:-1.5%;
-	width:103%;
-	height:104%;
+	width:103%; height:104%;
 	background: black;
 }
 #canvasFrameMat{
@@ -50,6 +49,9 @@ body{
 	top:0em; left:0em;
 	width:100%; height:100%;
 	background: white;
+}
+#localButtons{
+	margin:0em 1.5em;
 }
 
 #rand{

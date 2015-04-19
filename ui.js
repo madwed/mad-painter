@@ -1,11 +1,3 @@
-$( "#managers" ).accordion({
-	active: 1,
-	animate: "swing",
-	collapsible: true,
-	heightStyle: "content",
-	icons: {"header": "ui-icon-blank", "activeHeader": "ui-icon-triangle-1-se"}
-});
-
 //Color picker
 function refreshSwatch() {
   var red = $( "#red" ).slider( "value" ),
@@ -35,7 +27,7 @@ $(function() {
 		range: "min",
 		max: 300,
 		min: 1,
-		value: 10
+		value: 30
 	});
 	$("#smear, #life").slider("option","max",1000);
 	$("#size").on("slide",function(_,ui){$("#sizeSpin").spinner("value",ui.value)});
@@ -47,9 +39,19 @@ $(function() {
 		max: 300,
 		min: 1,
 	});
-	$("#sizeSpin, #smearSpin, #lifeSpin").spinner("value",10);
+	$("#sizeSpin, #smearSpin, #lifeSpin").spinner("value",30);
 	$("#smearSpin, #lifeSpin").spinner("option","max",1000);
 	$("#sizeSpin").on("spin",function(_,ui){$("#size").slider("value",ui.value)});
 	$("#smearSpin").on("spin",function(_,ui){$("#smear").slider("value",ui.value)});
 	$("#lifeSpin").on("spin",function(_,ui){$("#life").slider("value",ui.value)});
+
+	//Managers
+	$( "#managers" ).accordion({
+		active: 1,
+		animate: "swing",
+		collapsible: true,
+		heightStyle: "content",
+		icons: {"header": "ui-icon-blank", "activeHeader": "ui-icon-triangle-1-se"}
+	});
+
 });
