@@ -4,10 +4,8 @@ window.onload = function() {
   var uiCanvas = document.getElementById('uiCanvas');
   var actions = document.getElementsByName("action");
   var randoms = document.getElementsByName("random");
-  var life = document.getElementById("life");
-  var smear = document.getElementById("smear");
   bigMan = new Piece();
-  bigMan.init(canvas1,uiCanvas,actions,randoms,life,smear);
+  bigMan.init(canvas1,uiCanvas,actions,randoms);
   now();
 }
 

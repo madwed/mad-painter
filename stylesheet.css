@@ -40,9 +40,9 @@ body{
 }
 #canvasFrame{
 	position: absolute;
-	top:-1.3125%; left:-1%;
-	width:102%;
-	height:102.625%;
+	top:-2%; left:-1.5%;
+	width:103%;
+	height:104%;
 	background: black;
 }
 #canvasFrameMat{
@@ -50,6 +50,18 @@ body{
 	top:0em; left:0em;
 	width:100%; height:100%;
 	background: white;
+}
+
+#rand{
+	margin: .42em 1.24em;
+	width: 100%;
+}
+#rand p{
+	margin: 0em;
+}
+#rand p input{
+	position: absolute;
+	right: 7em;
 }
 
 #managers-wrapper{
@@ -66,9 +78,9 @@ body{
 	text-align: left;
 	font-size: 75%;
 }
-
-th {
-	text-decoration: underline overline;
+#managers div p input{
+	position: absolute;
+	right: 17em;
 }
 
 #colors{
