@@ -35,7 +35,7 @@ $(function() {
 		range: "min",
 		max: 300,
 		min: 1,
-		value: 10
+		value: 30
 	});
 	$("#smear, #life").slider("option","max",1000);
 	$("#size").on("slide",function(_,ui){$("#sizeSpin").spinner("value",ui.value)});
@@ -47,9 +47,12 @@ $(function() {
 		max: 300,
 		min: 1,
 	});
-	$("#sizeSpin, #smearSpin, #lifeSpin").spinner("value",10);
+	$("#sizeSpin, #smearSpin, #lifeSpin").spinner("value",30);
 	$("#smearSpin, #lifeSpin").spinner("option","max",1000);
 	$("#sizeSpin").on("spin",function(_,ui){$("#size").slider("value",ui.value)});
 	$("#smearSpin").on("spin",function(_,ui){$("#smear").slider("value",ui.value)});
 	$("#lifeSpin").on("spin",function(_,ui){$("#life").slider("value",ui.value)});
+
+	//BrushType, ie wet, dry
+	$("#brushType").selectmenu();
 });

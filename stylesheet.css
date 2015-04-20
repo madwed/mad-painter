@@ -93,22 +93,31 @@ body{
 	left: 1.2em;
 }
 #brushProperties{
-	display: inline-block;
-	width:79%;
+	width:100%;
 	height:8em;
-	margin: 0em .2em 0em 0em;
+	margin: .5em .2em;
 }
-#brushPropertiesSpin{
+#brushProps{
 	display: inline-block;
 	position: absolute;
+	left: 0em;
+	width:70%;
+	height:8em;
+	margin:0em;
+}
+#brushSpins{
+	display: inline-block;
+	position: absolute;
+	right:0em;
 	width:20%;
 	height:8em;
 	margin:0em;
 }
-#brushPropertiesSpin input{
+#brushSpins input{
 	width:100%;
 	height:1em;
 }
+
 /*
 implement black and white background behind slider
 #red, #green, #blue, #alpha {
