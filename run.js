@@ -24,10 +24,3 @@ now = function(){
 
   })();
 };
-
-
-document.addEventListener("keydown", function(e) {
-    if (e.keyCode == 83) {
-      //stop = 1;
-    }
-}, false);
