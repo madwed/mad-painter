@@ -1,3 +1,6 @@
+//Run Browserify on this file to build
+
+var Piece = require('./lib/Piece');
 
 window.onload = function() {
   var canvas1 = document.getElementById('canvas1');
