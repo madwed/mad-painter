@@ -1,11 +1,3 @@
-$( "#managers" ).accordion({
-	active: 1,
-	animate: "swing",
-	collapsible: true,
-	heightStyle: "content",
-	icons: {"header": "ui-icon-blank", "activeHeader": "ui-icon-triangle-1-se"}
-});
-
 //Color picker
 function refreshSwatch() {
   var red = $( "#red" ).slider( "value" ),
@@ -55,4 +47,14 @@ $(function() {
 
 	//BrushType, ie wet, dry
 	$("#brushType").selectmenu();
+
+	//Managers
+	$( "#managers" ).accordion({
+		active: 1,
+		animate: "swing",
+		collapsible: true,
+		heightStyle: "content",
+		icons: {"header": "ui-icon-blank", "activeHeader": "ui-icon-triangle-1-se"}
+	});
+
 });

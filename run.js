@@ -19,10 +19,6 @@ now = function(){
 
     bigMan.run();
 
-    if(stop === 1){
-      Save(canvas1,"stillLife","png");
-      //stop = 0; 
-    }
   })();
 };
 
