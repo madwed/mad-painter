@@ -9,7 +9,7 @@ window.onload = function() {
   var randoms = document.getElementsByName("random");
   bigMan = new Piece();
   bigMan.init(canvas1);
-  //bigMan.initUI(actions,randoms);
+  bigMan.initUI(actions,randoms);
   //Color picker
 function refreshSwatch() {
   var red = $( "#red" ).slider( "value" ),
