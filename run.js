@@ -1,75 +1,27 @@
 //Run Browserify on this file to build
 
 var Piece = require('./lib/Piece');
+var BrushManager = require('./lib/BrushManager');
+var DryBrush = require('./lib/DryBrush');
+var Vector = require('./lib/Vector')
 
 window.onload = function() {
   var canvas1 = document.getElementById('canvas1');
-  var uiCanvas = document.getElementById('uiCanvas');
-  var actions = document.getElementsByName("action");
-  var randoms = document.getElementsByName("random");
   bigMan = new Piece();
   bigMan.init(canvas1);
-  bigMan.initUI(actions,randoms);
-  //Color picker
-function refreshSwatch() {
-  var red = $( "#red" ).slider( "value" ),
-    green = $( "#green" ).slider( "value" ),
-    blue = $( "#blue" ).slider( "value" ),
-    alpha = $("#alpha").slider("value");
-  $( "#swatch" ).css( "background-color", 'rgba('+red+', '+green+', '+blue+', '+alpha/255+')' );
-}
+  var brushMan = new BrushManager(function(marks,self){self.smearOpaque(marks,self);}
+    , function(self){return self.getMarks(self);});
+  bigMan.addManager(brushMan);
+  for(var i = 0; i < 100; i++){
+    var pos = Math.random() * 800;
+    brushMan.addBrush(new DryBrush(pos,pos,pos+15,pos+15,new Vector(Math.random()-.5,Math.random()-.5),Infinity,Infinity,20,Math.random()*100));
+    var newBrush = brushMan.brushes[brushMan.brushes.length-1];
+    newBrush.setMaxSpeedAndForce(5,.01);
+    newBrush.rgbaValues = [Math.random()*255,0,Math.random()*255,255];
+  }
 
-$(function() {
-  //Color Picker
-  $( "#red, #green, #blue, #alpha" ).slider({
-    orientation: "horizontal",
-    range: "min",
-    max: 255,
-    value: 255,
-    slide: refreshSwatch,
-    change: refreshSwatch
-  });
-  $( "#red" ).slider( "value", 255 );
-  $( "#green" ).slider( "value", 140 );
-  $( "#blue" ).slider( "value", 60 );
+  
 
-  //Brush width, smearSampleRate, strokeLength
-  $("#size, #smear, #life").slider({
-    orientation: "horizontal",
-    range: "min",
-    max: 300,
-    min: 1,
-    value: 30
-  });
-  $("#smear, #life").slider("option","max",1000);
-  $("#size").on("slide",function(_,ui){$("#sizeSpin").spinner("value",ui.value)});
-  $("#smear").on("slide",function(_,ui){$("#smearSpin").spinner("value",ui.value)});
-  $("#life").on("slide",function(_,ui){$("#lifeSpin").spinner("value",ui.value)});
-
-  //Accompanying spinners
-  $("#sizeSpin, #smearSpin, #lifeSpin").spinner({
-    max: 300,
-    min: 1,
-  });
-  $("#sizeSpin, #smearSpin, #lifeSpin").spinner("value",30);
-  $("#smearSpin, #lifeSpin").spinner("option","max",1000);
-  $("#sizeSpin").on("spin",function(_,ui){$("#size").slider("value",ui.value)});
-  $("#smearSpin").on("spin",function(_,ui){$("#smear").slider("value",ui.value)});
-  $("#lifeSpin").on("spin",function(_,ui){$("#life").slider("value",ui.value)});
-
-  //BrushType, ie wet, dry
-  $("#brushType").selectmenu();
-
-  //Managers
-  $( "#managers" ).accordion({
-    active: 1,
-    animate: "swing",
-    collapsible: true,
-    heightStyle: "content",
-    icons: {"header": "ui-icon-blank", "activeHeader": "ui-icon-triangle-1-se"}
-  });
-
-});
   now();
 }
 
@@ -81,7 +33,6 @@ now = function(){
     var animloop_id;
     animloop_id = requestAnimationFrame(animloop);
     bigMan.run();
-    bigMan.clickInterface();
     
 
   })();
