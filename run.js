@@ -11,7 +11,7 @@ window.onload = function() {
   bigMan = new Piece();
   bigMan.init(canvas1);
   var brushMan = new BrushManager(function(marks,self){self.smearOpaque(marks,self);}
-    , function(self){return self.getMarksNoGaps(self);});
+    , function(){return this.getMarksNoGaps();});
   bigMan.addManager(brushMan);
   for(var i = 0; i < 20; i++){
     var pos = Math.random() * 800;
