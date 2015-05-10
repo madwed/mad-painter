@@ -33,9 +33,6 @@ window.onload = function() {
 
   bigMan.initUI()
 
-
-  
-
   now();
 }
 
